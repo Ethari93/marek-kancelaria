@@ -1,0 +1,45 @@
+.three-col {
+  display: flex;
+  background-color: $light-grey;
+  padding: 8rem $outer-padding;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 2rem;
+
+    .icon {
+      img {
+        height: 6rem;
+      }
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      font-weight: 700;
+    }
+
+    .description {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .examples {
+      margin-top: 1rem;
+      text-align: center;
+      list-style: none;
+      font-size: 1.5rem;
+
+      li {
+        &::before,
+        &::after {
+          content: "-";
+          margin: 0 2rem;
+        }
+      }
+    }
+  }
+}

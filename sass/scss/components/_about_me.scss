@@ -1,0 +1,46 @@
+.about-me {
+  padding: 7rem 10rem 7rem 13rem;
+  background-color: $white;
+  &__headline {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 8rem;
+
+    .copy {
+      margin-left: 9rem;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .media {
+      position: relative;
+      .rectangle {
+        background-color: $dark-blue;
+        width: 40rem;
+        height: 40rem;
+        position: absolute;
+        z-index: 0;
+        left: -3rem;
+        top: -3rem;
+      }
+
+      .photo {
+        background-image: url("/static/assets/marek_nowicki_2.jpg");
+        width: 40rem;
+        height: 40rem;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}

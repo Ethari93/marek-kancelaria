@@ -1,0 +1,46 @@
+.blog {
+  text-align: center;
+  &__intro {
+    padding: 5rem;
+    .intro-text {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .blog-link {
+      color: $dark-blue;
+    }
+  }
+
+  &__promo {
+    background-image: url(../../../static/assets/blog.jpg);
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    padding: 5rem;
+
+    .blog-logo {
+      height: 7rem;
+    }
+
+    .blog-headline {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-desc {
+      margin: 0 auto;
+      max-width: 50rem;
+    }
+
+    .gld-line {
+      margin-top: 2rem;
+    }
+
+    .blog-btn {
+      margin-top: 3rem;
+    }
+  }
+}

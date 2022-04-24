@@ -1,0 +1,79 @@
+.hero {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 $outer-padding;
+  flex-grow: 1;
+
+  &__image-wrapper {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: streetch;
+    justify-content: flex-end;
+
+    .hero-image {
+      background-image: url(../../../static/assets/marek_nowicki_1.png);
+      flex-grow: 1;
+      min-width: 30vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+    }
+  }
+}
+
+.cta {
+  align-self: center;
+  max-width: 50rem;
+
+  &__list {
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+
+      img {
+        margin-right: 1rem;
+        height: 3rem;
+      }
+
+      &.move-in {
+        &-1 {
+          animation: moveInRight 1s cubic-bezier(0.86, 0, 0.07, 1);
+          animation-fill-mode: forwards;
+        }
+
+        &-2 {
+          animation: moveInRight 1s cubic-bezier(0.86, 0, 0.07, 1) 0.5s;
+          animation-fill-mode: forwards;
+        }
+
+        &-3 {
+          animation: moveInRight 1s cubic-bezier(0.86, 0, 0.07, 1) 1s;
+          animation-fill-mode: forwards;
+        }
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 5rem;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

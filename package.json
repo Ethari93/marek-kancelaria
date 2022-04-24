@@ -1,0 +1,21 @@
+{
+  "name": "marek-kancelaria",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "last 10 versions",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css --watch --recursive",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/style.comp.css",
+    "compress:css": "node-sass css/style.comp.css css/style.min.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css compress:css"
+  },
+  "author": "Mikolaj Szewczyk",
+  "license": "ISC",
+  "dependencies": {
+    "concat": "^1.0.3",
+    "autoprefixer": "^10.4.2",
+    "node-sass": "^7.0.1"
+  }
+}

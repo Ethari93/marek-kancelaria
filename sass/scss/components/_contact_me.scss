@@ -1,0 +1,85 @@
+.contact-me {
+  background: $white;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+
+  &__column {
+    margin: 0 4rem;
+    width: 35%;
+  }
+
+  &__headline {
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 4rem;
+
+    &::after {
+      content: "";
+      border-bottom: 4px solid $gold;
+      width: 4rem;
+      position: absolute;
+      left: 0;
+      top: 4rem;
+    }
+  }
+
+  &__details {
+    .details-item {
+      margin-top: 2rem;
+
+      i {
+        margin-right: 1rem;
+        color: $dark-blue;
+      }
+    }
+  }
+
+  &__form {
+    .contact-form {
+      &__btn {
+        margin-top: 2rem;
+      }
+
+      &__row {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        i {
+          position: absolute;
+          left: 1.5rem;
+          top: 1.2rem;
+          color: $dark-grey;
+        }
+        input {
+          height: 4rem;
+          border: 2px solid $grey;
+        }
+
+        textarea {
+          height: 15rem;
+          resize: none;
+        }
+
+        input,
+        textarea {
+          border: 2px solid $grey;
+          padding: 0.6rem 4rem;
+          transition: all 0.2s ease-in;
+
+          &::placeholder {
+            color: $darker-grey;
+            margin-left: 1rem;
+          }
+
+          &:focus,
+          :focus-visible {
+            border: 2px solid $darker-grey;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
