@@ -320,7 +320,7 @@ Files inside this folder can contain specific element styles and layout.
   flex-direction: column;
   align-content: center;
   padding: 0 10rem;
-  background-image: linear-gradient(0deg, rgba(27, 44, 61, 0.75), rgba(27, 44, 61, 0.75)), linear-gradient(89.99deg, rgba(27, 44, 61, 0.1305) 0.01%, rgba(27, 44, 61, 0.6003) 43.75%, rgba(27, 44, 61, 0.87) 99.99%), url("../../../static/assets/bielsko_bg.jpg");
+  background-image: linear-gradient(0deg, rgba(27, 44, 61, 0.75), rgba(27, 44, 61, 0.75)), linear-gradient(89.99deg, rgba(27, 44, 61, 0.1305) 0.01%, rgba(27, 44, 61, 0.6003) 43.75%, rgba(27, 44, 61, 0.87) 99.99%), url("./../static/assets/bielsko_bg.jpg");
   background-size: cover;
   background-position: center;
   color: #fff; }
