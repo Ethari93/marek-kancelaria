@@ -19,9 +19,12 @@ Files inside this folder can contain global styles used in the project.
 
 body {
   box-sizing: border-box;
-  max-width: 192rem;
+  max-width: 160rem;
   margin: 0 auto;
   background: #e7e7e7; }
+
+html {
+  scroll-behavior: smooth; }
 
 a {
   color: #2361a1; }
@@ -55,6 +58,15 @@ h2 {
 .contact-me i {
   font-size: 1.8rem; }
 
+.footer i {
+  font-size: 1.8rem; }
+
+.footer .logo .name {
+  font-size: 1.8rem; }
+
+.footer .copyright {
+  font-size: 1.2rem; }
+
 /* Additonal Base Stylesheets */
 /*
 This file is used to contain all component imports.
@@ -69,12 +81,19 @@ Files inside this folder should contain all styles relating to a reusable compon
   font-size: 1.8rem;
   cursor: pointer; }
   .btn:hover {
-    background-color: #eeeeee;
+    background-color: #f4f4f4;
     color: #ab8d6b;
     transition: all 0.3s ease; }
   .btn--alt:hover {
     background-color: #1b2c3d;
     color: #fff; }
+
+.menu-hover a,
+.menu-hover li {
+  transition: all 0.3s; }
+  .menu-hover a:hover,
+  .menu-hover li:hover {
+    transform: scale(1.05); }
 
 .hero {
   display: flex;
@@ -86,7 +105,7 @@ Files inside this folder should contain all styles relating to a reusable compon
     flex-grow: 1;
     flex-direction: column;
     display: flex;
-    align-items: streetch;
+    align-items: stretch;
     justify-content: flex-end; }
     .hero__image-wrapper .hero-image {
       background-image: url(./../static/assets/marek_nowicki_1.png);
@@ -133,7 +152,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 
 .three-col {
   display: flex;
-  background-color: #eeeeee;
+  background-color: #f4f4f4;
   padding: 8rem 5rem; }
   .three-col__item {
     display: flex;
@@ -141,8 +160,10 @@ Files inside this folder should contain all styles relating to a reusable compon
     align-items: center;
     font-size: 1.6rem;
     padding: 2rem; }
-    .three-col__item .icon img {
-      height: 6rem; }
+    .three-col__item .icon i {
+      font-size: 5rem;
+      color: #1b2c3d;
+      margin-bottom: 3rem; }
     .three-col__item .subtitle {
       margin-top: 0.5rem;
       font-weight: 700; }
@@ -192,10 +213,12 @@ Files inside this folder should contain all styles relating to a reusable compon
         z-index: 1; }
 
 .contact-me {
-  background: #fff;
+  background: #f4f4f4;
   display: flex;
   justify-content: center;
-  padding: 4rem 0; }
+  padding: 10rem 0; }
+  .contact-me .contact-btn {
+    margin-top: 3rem; }
   .contact-me__column {
     margin: 0 4rem;
     width: 35%; }
@@ -210,6 +233,8 @@ Files inside this folder should contain all styles relating to a reusable compon
       position: absolute;
       left: 0;
       top: 4rem; }
+  .contact-me__description {
+    max-width: 54rem; }
   .contact-me__details .details-item {
     margin-top: 2rem; }
     .contact-me__details .details-item i {
@@ -250,9 +275,10 @@ Files inside this folder should contain all styles relating to a reusable compon
         outline: none; }
 
 .blog {
-  text-align: center; }
+  text-align: center;
+  background-color: #f4f4f4; }
   .blog__intro {
-    padding: 5rem; }
+    padding: 10rem; }
     .blog__intro .intro-text {
       width: 60%;
       margin: 0 auto; }
@@ -263,7 +289,7 @@ Files inside this folder should contain all styles relating to a reusable compon
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 5rem; }
+    padding: 20rem; }
     .blog__promo .blog-logo {
       height: 7rem; }
     .blog__promo .blog-headline {
@@ -285,34 +311,86 @@ Files inside this folder should contain all styles relating to a reusable compon
   display: block;
   border-bottom: 1px solid #ab8d6b; }
 
+.black-line {
+  margin: 0 auto;
+  display: block;
+  border-bottom: 1px solid #898989; }
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
 */
-.menu {
+.header .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5rem; }
-  .menu__logo {
+  .header .menu__logo {
     height: 6rem; }
-  .menu .between {
+  .header .menu .between {
     flex-grow: 1; }
 
-.nav__items {
+.header .nav__items {
   display: flex;
   list-style: none; }
-  .nav__items li {
-    font-size: 2rem;
-    transition: all 0.3s; }
-    .nav__items li:not(:last-child) {
+  .header .nav__items li {
+    font-size: 2rem; }
+    .header .nav__items li:not(:last-child) {
       margin-right: 4rem; }
-    .nav__items li a {
+    .header .nav__items li a {
       text-decoration: none;
       color: inherit; }
-    .nav__items li:hover {
-      color: #ab8d6b;
-      transform: scale(1.05); }
+    .header .nav__items li:hover {
+      color: #ab8d6b; }
+
+.footer {
+  padding: 10rem 20rem;
+  background-color: #fff; }
+  .footer .top {
+    display: flex;
+    justify-content: space-between; }
+  .footer__left {
+    display: flex;
+    flex-direction: column; }
+    .footer__left .logo {
+      display: flex;
+      align-items: center; }
+      .footer__left .logo img {
+        height: 4.5rem;
+        margin-right: 1rem; }
+    .footer__left .social-links {
+      display: flex;
+      margin-top: 2.5rem;
+      margin-left: 0.5rem; }
+      .footer__left .social-links i {
+        color: black;
+        font-size: 2.5rem;
+        margin-right: 2rem; }
+  .footer__middle .menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .footer__middle .menu li {
+      margin-bottom: 1rem; }
+      .footer__middle .menu li a {
+        color: black;
+        text-decoration: none; }
+  .footer__right .contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    .footer__right .contact li {
+      margin-bottom: 3rem; }
+      .footer__right .contact li a {
+        text-decoration: none;
+        color: #ab8d6b; }
+  .footer .black-line {
+    margin-top: 8rem; }
+  .footer .copyright {
+    margin-top: 1rem;
+    text-align: right;
+    color: #898989; }
 
 .header {
   min-height: 70rem;

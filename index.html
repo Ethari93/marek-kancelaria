@@ -20,8 +20,8 @@
       <img class="menu__logo" src="./static/assets/svg/kancelaria_logo.svg" alt="kancelaria logo" />
       <div class="between"></div>
       <nav class="nav">
-        <ul class="nav__items">
-          <li><a href="#">Specjalizacja</a></li>
+        <ul class="nav__items menu-hover">
+          <li><a href="#specialization">Specjalizacja</a></li>
           <li><a href="#about-me">O mnie</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact-me">Kontakt</a></li>
@@ -56,10 +56,10 @@
       </div>
     </div>
   </header>
-  <section class="three-col">
+  <section class="three-col" id="specialization">
     <div class="three-col__item">
       <div class="icon">
-        <img src="./static/assets/svg/briefcase.svg" alt="prawa autorskie" />
+        <i class="fa-solid fa-copyright"></i>
       </div>
       <h2 class="subtitle">Prawa autorskie, wizerunek i marka</h2>
       <p class="description">
@@ -75,7 +75,7 @@
     </div>
     <div class="three-col__item">
       <div class="icon">
-        <img src="./static/assets/svg/scale.svg" alt="prawa autorskie" />
+        <i class="fa-solid fa-scale-balanced"></i>
       </div>
       <h2 class="subtitle">Umowy handlowe</h2>
       <p class="description">
@@ -90,7 +90,7 @@
     </div>
     <div class="three-col__item">
       <div class="icon">
-        <img src="./static/assets/svg/user.svg" alt="prawa autorskie" />
+        <i class="fa-solid fa-globe"></i>
       </div>
       <h2 class="subtitle">Działalność w internecie</h2>
       <p class="description">
@@ -182,8 +182,14 @@
     </div>
     </div>
     <div class="contact-me__form contact-me__column">
-      <div class="contact-me__headline headline-bold">CHCESZ ZOSTAWIĆ WIADOMOŚĆ?</div>
-      <form action="#" class="contact-form">
+      <div class="contact-me__headline headline-bold">GODZINY OTWARCIA:</div>
+      <div class="contact-me__description">Spotkanie w kancelarii jest możliwe o indywidualnie uzgodnionej godzinie po
+        wcześniejszym umówieniu przez telefon
+        lub e-mail.</div>
+      <a href="https://legalneportfolio.pl/kontakt/" target="_blank">
+        <button class="contact-btn btn">Zostaw wiadomość</button>
+      </a>
+      <!-- <form action="#" class="contact-form">
         <div class="contact-form__row">
           <i class="fa-solid fa-user"></i>
           <input id="name" type="text" placeholder="Imię i nazwisko (wymagane)" />
@@ -201,9 +207,46 @@
           <textarea id="description" placeholder="W czym mogę Ci pomóc?"></textarea>
         </div>
         <button type="submit" class="contact-form__btn btn btn--alt">Wyślij</button>
-      </form>
+      </form> -->
     </div>
   </section>
+  <footer class="footer">
+    <div class="top">
+      <div class="footer__left">
+        <div class="logo">
+          <img class="menu__logo" src="./static/assets/svg/kancelaria_logo_dark.svg" alt="kancelaria logo" />
+          <div class="name">Marek Nowicki</div>
+        </div>
+        <div class="social-links menu-hover">
+          <a href="https://www.facebook.com/profile.php?id=100075308667637" target="_blank"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/marek-a-nowicki" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://legalneportfolio.pl/" target="_blank"><i class="fa-solid fa-square-rss"></i></a>
+        </div>
+      </div>
+      <div class="footer__middle">
+        <ul class="menu menu-hover">
+          <li><a href="#specialization">Specjalizacja</a></li>
+          <li><a href="#about-me">O mnie</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact-me">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer__right">
+        <ul class="contact">
+          <li><a href="tel:+48 515 761 614">+48 515 761 614</a></li>
+          <li> <a href="mailto:kancelaria@mareknowicki.com">kancelaria@mareknowicki.com</a></li>
+          <li>ul. Nad Niprem 2/7, 43-300 Bielsko-Biała</li>
+        </ul>
+      </div>
+    </div>
+    <div class="black-line"></div>
+    <div class="copyright">
+      © 2021 Marek Nowicki
+    </div>
+
+  </footer>
 </body>
 
 </html>

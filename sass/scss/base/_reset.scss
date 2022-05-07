@@ -8,9 +8,13 @@
 
 body {
   box-sizing: border-box;
-  max-width: 192rem;
+  max-width: 160rem;
   margin: 0 auto;
   background: #e7e7e7;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {

@@ -1,8 +1,12 @@
 .contact-me {
-  background: $white;
+  background: $light-grey;
   display: flex;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 10rem 0;
+
+  .contact-btn {
+    margin-top: 3rem;
+  }
 
   &__column {
     margin: 0 4rem;
@@ -22,6 +26,10 @@
       left: 0;
       top: 4rem;
     }
+  }
+
+  &__description {
+    max-width: 54rem;
   }
 
   &__details {
@@ -69,13 +77,13 @@
           transition: all 0.2s ease-in;
 
           &::placeholder {
-            color: $darker-grey;
+            color: $darkest-grey;
             margin-left: 1rem;
           }
 
           &:focus,
           :focus-visible {
-            border: 2px solid $darker-grey;
+            border: 2px solid $darkest-grey;
             outline: none;
           }
         }
