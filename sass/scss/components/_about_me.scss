@@ -1,18 +1,42 @@
 .about-me {
-  padding: 7rem 10rem 7rem 13rem;
   background-color: $white;
+  padding: $mobile-text-padding;
+
   &__headline {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
+  }
+
+  @include respond-to("large") {
+    padding: 7rem 10rem 7rem 13rem;
+
+    &__headline {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 700;
+    }
   }
 
   &__content {
     display: flex;
-    margin-top: 8rem;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 4rem;
+
+    @include respond-to("large") {
+      flex-direction: row;
+      margin-top: 8rem;
+    }
 
     .copy {
-      margin-left: 9rem;
+      margin-top: 4rem;
+      text-align: center;
+
+      @include respond-to("large") {
+        margin-left: 9rem;
+      }
 
       p {
         &:not(:last-child) {
@@ -23,23 +47,31 @@
 
     .media {
       position: relative;
-      .rectangle {
-        background-color: $dark-blue;
-        width: 40rem;
-        height: 40rem;
-        position: absolute;
-        z-index: 0;
-        left: -3rem;
-        top: -3rem;
-      }
 
       .photo {
         background-image: url("./../static/assets/marek_nowicki_2.jpg");
-        width: 40rem;
-        height: 40rem;
+        width: 35rem;
+        height: 35rem;
         background-size: cover;
         position: relative;
         z-index: 1;
+      }
+
+      @include respond-to("large") {
+        .rectangle {
+          background-color: $dark-blue;
+          width: 40rem;
+          height: 40rem;
+          position: absolute;
+          z-index: 0;
+          left: -3rem;
+          top: -3rem;
+        }
+
+        .photo {
+          width: 40rem;
+          height: 40rem;
+        }
       }
     }
   }

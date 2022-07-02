@@ -18,8 +18,12 @@ html {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 700;
+
+  @include respond-to("large") {
+    font-size: 5rem;
+  }
 }
 
 h2 {

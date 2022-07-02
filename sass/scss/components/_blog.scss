@@ -2,10 +2,18 @@
   text-align: center;
   background-color: $light-grey;
   &__intro {
-    padding: 10rem;
+    padding: $mobile-text-padding;
+
+    @include respond-to("large") {
+      padding: 10rem;
+    }
+
     .intro-text {
-      width: 60%;
       margin: 0 auto;
+
+      @include respond-to("large") {
+        width: 60%;
+      }
     }
 
     .blog-link {
@@ -18,7 +26,11 @@
     background-size: cover;
     background-position: center;
     color: $white;
-    padding: 20rem;
+    padding: $mobile-text-padding;
+
+    @include respond-to("large") {
+      padding: 20rem;
+    }
 
     .blog-logo {
       height: 7rem;

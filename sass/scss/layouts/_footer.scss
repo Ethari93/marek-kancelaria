@@ -1,18 +1,39 @@
 .footer {
-  padding: 10rem 20rem;
+  padding: $mobile-text-padding;
   background-color: $white;
+  text-align: center;
+
+  @include respond-to("large") {
+    padding: 10rem 20rem;
+    text-align: left;
+  }
 
   .top {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    @include respond-to("large") {
+      flex-direction: row;
+    }
   }
 
   &__left {
     display: flex;
     flex-direction: column;
+    order: 1;
+    margin-top: $footer-spacing;
+
+    @include respond-to("large") {
+      order: 0;
+      margin-top: 0;
+    }
+
     .logo {
       display: flex;
+      justify-content: center;
       align-items: center;
+
       img {
         height: 4.5rem;
         margin-right: 1rem;
@@ -21,13 +42,25 @@
 
     .social-links {
       display: flex;
-      margin-top: 2.5rem;
-      margin-left: 0.5rem;
+      justify-content: center;
+
+      margin-top: $footer-spacing;
+
+      @include respond-to("large") {
+        margin-top: 0;
+        margin-left: 0.5rem;
+        justify-content: flex-start;
+      }
 
       i {
         color: black;
-        font-size: 2.5rem;
-        margin-right: 2rem;
+        font-size: 3rem;
+        margin: 1.5rem;
+
+        @include respond-to("large") {
+          font-size: 2.5rem;
+          margin: 2rem 2rem 0 0;
+        }
       }
     }
   }
@@ -38,6 +71,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0;
 
       li {
         margin-bottom: 1rem;
@@ -50,13 +84,22 @@
   }
 
   &__right {
+    margin-top: $footer-spacing;
+
+    @include respond-to("large") {
+      margin-top: 0;
+    }
     .contact {
       list-style: none;
       display: flex;
       flex-direction: column;
 
       li {
-        margin-bottom: 3rem;
+        @include respond-to("large") {
+          margin-bottom: 3rem;
+          margin-right: 2rem;
+        }
+
         a {
           text-decoration: none;
           color: $gold;
@@ -66,12 +109,19 @@
   }
 
   .black-line {
-    margin-top: 8rem;
+    margin-top: 2rem;
+    @include respond-to("large") {
+      margin-top: 8rem;
+    }
   }
 
   .copyright {
     margin-top: 1rem;
-    text-align: right;
+    text-align: center;
     color: $darker-grey;
+
+    @include respond-to("large") {
+      text-align: right;
+    }
   }
 }

@@ -1,31 +1,58 @@
 .hero {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  padding: 0 $outer-padding;
-  flex-grow: 1;
+  padding: $outer-padding $outer-padding 0 $outer-padding;
 
-  &__image-wrapper {
-    flex-grow: 1;
-    flex-direction: column;
+  @include respond-to("medium") {
     display: flex;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: space-between;
+    flex-grow: 1;
 
-    .hero-image {
-      background-image: url(./../static/assets/marek_nowicki_1.png);
+    padding: 0 $outer-padding;
+    &__image-wrapper {
       flex-grow: 1;
-      min-width: 30vw;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom right;
+      flex-direction: column;
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-end;
+
+      .hero-image {
+        background-image: url(./../static/assets/marek_nowicki_1.png);
+        flex-grow: 1;
+        min-width: 40vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+      }
     }
   }
 }
 
 .cta {
   align-self: center;
-  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+
+  .hero-image-mobile {
+    margin-top: 4rem;
+    width: 100%;
+  }
+
+  @include respond-to("medium") {
+    max-width: 50rem;
+    display: block;
+
+    .hero-image-mobile {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 1rem;
+
+    @include respond-to("medium") {
+      margin-top: 0;
+    }
+  }
 
   &__list {
     margin-top: 3rem;

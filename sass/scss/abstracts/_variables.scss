@@ -1,5 +1,16 @@
 //Variables
 $outer-padding: 5rem;
+$mobile-text-padding: 6rem 3rem;
+
+$footer-spacing: 6rem;
+
+.mobile-wip {
+  display: none !important;
+
+  @include respond-to("large") {
+    display: block;
+  }
+}
 
 //Colors
 $light-grey: #f4f4f4;
@@ -10,6 +21,7 @@ $darkest-grey: #3f3f3f;
 
 $gold: #ab8d6b;
 $white: #fff;
+$light-blue: #546575;
 $dark-blue: #1b2c3d;
 
 $link-blue: #2361a1;

@@ -7,3 +7,33 @@
     transition: all 0.3s;
   }
 }
+
+.mobile-cross {
+  width: 4rem;
+
+  &:before,
+  &:after,
+  div {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 0.5rem;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+  }
+
+  &:hover:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  &:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+  &:hover div {
+    transform: scale(0);
+  }
+
+  @include respond-to("medium") {
+    display: none;
+  }
+}

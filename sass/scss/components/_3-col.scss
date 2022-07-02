@@ -1,7 +1,13 @@
 .three-col {
   display: flex;
+  flex-direction: column;
   background-color: $light-grey;
-  padding: 8rem $outer-padding;
+  padding: 5rem 0;
+
+  @include respond-to("medium") {
+    flex-direction: row;
+    padding: 8rem $outer-padding;
+  }
 
   &__item {
     display: flex;
@@ -14,7 +20,11 @@
       i {
         font-size: 5rem;
         color: $dark-blue;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
+
+        @include respond-to("medium") {
+          margin-bottom: 3rem;
+        }
       }
     }
 

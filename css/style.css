@@ -6,6 +6,18 @@ This file is used to contain all vendor imports.
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
 */
+.mobile-wip {
+  display: none !important; }
+  @media (min-width: 1200px) {
+    .mobile-wip {
+      display: block; } }
+
+.hide-on-mobile {
+  display: none; }
+  @media (min-width: 892px) {
+    .hide-on-mobile {
+      display: block; } }
+
 /*
 This file is used to contain all base imports.
 Files inside this folder can contain global styles used in the project.
@@ -45,8 +57,11 @@ html {
   font-size: 62.5%; }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 700; }
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 5rem; } }
 
 h2 {
   font-size: 1.8rem;
@@ -74,12 +89,16 @@ Files inside this folder should contain all styles relating to a reusable compon
 */
 .btn {
   padding: 1.3rem 1.8rem;
+  font-size: 2rem;
   border-radius: 0.5rem;
   background-color: #ab8d6b;
   border: none;
   color: #fff;
-  font-size: 1.8rem;
   cursor: pointer; }
+  @media (min-width: 892px) {
+    .btn {
+      padding: 1.3rem 1.8rem;
+      font-size: 1.8rem; } }
   .btn:hover {
     background-color: #f4f4f4;
     color: #ab8d6b;
@@ -95,29 +114,68 @@ Files inside this folder should contain all styles relating to a reusable compon
   .menu-hover li:hover {
     transform: scale(1.05); }
 
+.mobile-cross {
+  width: 4rem; }
+  .mobile-cross:before, .mobile-cross:after,
+  .mobile-cross div {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 0.5rem;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s; }
+  .mobile-cross:hover:before {
+    transform: translateY(12px) rotate(135deg); }
+  .mobile-cross:hover:after {
+    transform: translateY(-12px) rotate(-135deg); }
+  .mobile-cross:hover div {
+    transform: scale(0); }
+  @media (min-width: 892px) {
+    .mobile-cross {
+      display: none; } }
+
 .hero {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  padding: 0 5rem;
-  flex-grow: 1; }
-  .hero__image-wrapper {
-    flex-grow: 1;
-    flex-direction: column;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-end; }
-    .hero__image-wrapper .hero-image {
-      background-image: url(./../static/assets/marek_nowicki_1.png);
+  padding: 5rem 5rem 0 5rem; }
+  @media (min-width: 892px) {
+    .hero {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
       flex-grow: 1;
-      min-width: 30vw;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom right; }
+      padding: 0 5rem; }
+      .hero__image-wrapper {
+        flex-grow: 1;
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end; }
+        .hero__image-wrapper .hero-image {
+          background-image: url(./../static/assets/marek_nowicki_1.png);
+          flex-grow: 1;
+          min-width: 40vw;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: bottom right; } }
 
 .cta {
   align-self: center;
-  max-width: 50rem; }
+  display: flex;
+  flex-direction: column; }
+  .cta .hero-image-mobile {
+    margin-top: 4rem;
+    width: 100%; }
+  @media (min-width: 892px) {
+    .cta {
+      max-width: 50rem;
+      display: block; }
+      .cta .hero-image-mobile {
+        display: none; } }
+  .cta__subtitle {
+    margin-top: 1rem; }
+    @media (min-width: 892px) {
+      .cta__subtitle {
+        margin-top: 0; } }
   .cta__list {
     margin-top: 3rem;
     font-size: 1.8rem;
@@ -152,8 +210,13 @@ Files inside this folder should contain all styles relating to a reusable compon
 
 .three-col {
   display: flex;
+  flex-direction: column;
   background-color: #f4f4f4;
-  padding: 8rem 5rem; }
+  padding: 5rem 0; }
+  @media (min-width: 892px) {
+    .three-col {
+      flex-direction: row;
+      padding: 8rem 5rem; } }
   .three-col__item {
     display: flex;
     flex-direction: column;
@@ -163,7 +226,10 @@ Files inside this folder should contain all styles relating to a reusable compon
     .three-col__item .icon i {
       font-size: 5rem;
       color: #1b2c3d;
-      margin-bottom: 3rem; }
+      margin-bottom: 2rem; }
+      @media (min-width: 892px) {
+        .three-col__item .icon i {
+          margin-bottom: 3rem; } }
     .three-col__item .subtitle {
       margin-top: 0.5rem;
       font-weight: 700; }
@@ -181,47 +247,76 @@ Files inside this folder should contain all styles relating to a reusable compon
         margin: 0 2rem; }
 
 .about-me {
-  padding: 7rem 10rem 7rem 13rem;
-  background-color: #fff; }
+  background-color: #fff;
+  padding: 6rem 3rem; }
   .about-me__headline {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700; }
+  @media (min-width: 1200px) {
+    .about-me {
+      padding: 7rem 10rem 7rem 13rem; }
+      .about-me__headline {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 700; } }
   .about-me__content {
     display: flex;
-    margin-top: 8rem; }
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem; }
+    @media (min-width: 1200px) {
+      .about-me__content {
+        flex-direction: row;
+        margin-top: 8rem; } }
     .about-me__content .copy {
-      margin-left: 9rem; }
+      margin-top: 4rem;
+      text-align: center; }
+      @media (min-width: 1200px) {
+        .about-me__content .copy {
+          margin-left: 9rem; } }
       .about-me__content .copy p:not(:last-child) {
         margin-bottom: 2rem; }
     .about-me__content .media {
       position: relative; }
-      .about-me__content .media .rectangle {
-        background-color: #1b2c3d;
-        width: 40rem;
-        height: 40rem;
-        position: absolute;
-        z-index: 0;
-        left: -3rem;
-        top: -3rem; }
       .about-me__content .media .photo {
         background-image: url("./../static/assets/marek_nowicki_2.jpg");
-        width: 40rem;
-        height: 40rem;
+        width: 35rem;
+        height: 35rem;
         background-size: cover;
         position: relative;
         z-index: 1; }
+      @media (min-width: 1200px) {
+        .about-me__content .media .rectangle {
+          background-color: #1b2c3d;
+          width: 40rem;
+          height: 40rem;
+          position: absolute;
+          z-index: 0;
+          left: -3rem;
+          top: -3rem; }
+        .about-me__content .media .photo {
+          width: 40rem;
+          height: 40rem; } }
 
 .contact-me {
   background: #f4f4f4;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 10rem 0; }
+  padding: 6rem 3rem;
+  text-align: center; }
+  @media (min-width: 1200px) {
+    .contact-me {
+      padding: 10rem 0;
+      flex-direction: row;
+      text-align: left; } }
   .contact-me .contact-btn {
     margin-top: 3rem; }
-  .contact-me__column {
-    margin: 0 4rem;
-    width: 35%; }
+  @media (min-width: 1200px) {
+    .contact-me__column {
+      width: 35%;
+      margin: 0 4rem; } }
   .contact-me__headline {
     text-transform: uppercase;
     position: relative;
@@ -229,59 +324,76 @@ Files inside this folder should contain all styles relating to a reusable compon
     .contact-me__headline::after {
       content: "";
       border-bottom: 4px solid #ab8d6b;
-      width: 4rem;
+      width: 50%;
+      top: 4rem;
       position: absolute;
-      left: 0;
-      top: 4rem; }
+      left: 50%;
+      transform: translateX(-50%); }
+      @media (min-width: 1200px) {
+        .contact-me__headline::after {
+          left: 0;
+          width: 4rem;
+          transform: none; } }
   .contact-me__description {
     max-width: 54rem; }
   .contact-me__details .details-item {
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    text-align: left; }
     .contact-me__details .details-item i {
       margin-right: 1rem;
       color: #1b2c3d; }
-  .contact-me__form .contact-form__btn {
-    margin-top: 2rem; }
-  .contact-me__form .contact-form__row {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem; }
-    .contact-me__form .contact-form__row i {
-      position: absolute;
-      left: 1.5rem;
-      top: 1.2rem;
-      color: #bebebe; }
-    .contact-me__form .contact-form__row input {
-      height: 4rem;
-      border: 2px solid #d5d5d5; }
-    .contact-me__form .contact-form__row textarea {
-      height: 15rem;
-      resize: none; }
-    .contact-me__form .contact-form__row input,
-    .contact-me__form .contact-form__row textarea {
-      border: 2px solid #d5d5d5;
-      padding: 0.6rem 4rem;
-      transition: all 0.2s ease-in; }
-      .contact-me__form .contact-form__row input::placeholder,
-      .contact-me__form .contact-form__row textarea::placeholder {
-        color: #3f3f3f;
-        margin-left: 1rem; }
-      .contact-me__form .contact-form__row input:focus,
-      .contact-me__form .contact-form__row input :focus-visible,
-      .contact-me__form .contact-form__row textarea:focus,
-      .contact-me__form .contact-form__row textarea :focus-visible {
-        border: 2px solid #3f3f3f;
-        outline: none; }
+  .contact-me__form {
+    margin-top: 6rem; }
+    @media (min-width: 1200px) {
+      .contact-me__form {
+        margin-top: 0; } }
+    .contact-me__form .contact-form__btn {
+      margin-top: 2rem; }
+    .contact-me__form .contact-form__row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem; }
+      .contact-me__form .contact-form__row i {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.2rem;
+        color: #bebebe; }
+      .contact-me__form .contact-form__row input {
+        height: 4rem;
+        border: 2px solid #d5d5d5; }
+      .contact-me__form .contact-form__row textarea {
+        height: 15rem;
+        resize: none; }
+      .contact-me__form .contact-form__row input,
+      .contact-me__form .contact-form__row textarea {
+        border: 2px solid #d5d5d5;
+        padding: 0.6rem 4rem;
+        transition: all 0.2s ease-in; }
+        .contact-me__form .contact-form__row input::placeholder,
+        .contact-me__form .contact-form__row textarea::placeholder {
+          color: #3f3f3f;
+          margin-left: 1rem; }
+        .contact-me__form .contact-form__row input:focus,
+        .contact-me__form .contact-form__row input :focus-visible,
+        .contact-me__form .contact-form__row textarea:focus,
+        .contact-me__form .contact-form__row textarea :focus-visible {
+          border: 2px solid #3f3f3f;
+          outline: none; }
 
 .blog {
   text-align: center;
   background-color: #f4f4f4; }
   .blog__intro {
-    padding: 10rem; }
+    padding: 6rem 3rem; }
+    @media (min-width: 1200px) {
+      .blog__intro {
+        padding: 10rem; } }
     .blog__intro .intro-text {
-      width: 60%;
       margin: 0 auto; }
+      @media (min-width: 1200px) {
+        .blog__intro .intro-text {
+          width: 60%; } }
     .blog__intro .blog-link {
       color: #1b2c3d; }
   .blog__promo {
@@ -289,7 +401,10 @@ Files inside this folder should contain all styles relating to a reusable compon
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 20rem; }
+    padding: 6rem 3rem; }
+    @media (min-width: 1200px) {
+      .blog__promo {
+        padding: 20rem; } }
     .blog__promo .blog-logo {
       height: 7rem; }
     .blog__promo .blog-headline {
@@ -320,88 +435,140 @@ Files inside this folder should contain all styles relating to a reusable compon
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
 */
-.header .menu {
+.menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem; }
-  .header .menu__logo {
-    height: 6rem; }
-  .header .menu .between {
-    flex-grow: 1; }
-
-.header .nav__items {
-  display: flex;
-  list-style: none; }
-  .header .nav__items li {
-    font-size: 2rem; }
-    .header .nav__items li:not(:last-child) {
-      margin-right: 4rem; }
-    .header .nav__items li a {
-      text-decoration: none;
-      color: inherit; }
-    .header .nav__items li:hover {
-      color: #ab8d6b; }
+  padding: 3rem 3rem 0 3rem; }
+  .menu__logo {
+    height: 5rem; }
+  .menu .nav__items {
+    display: none; }
+  @media (min-width: 892px) {
+    .menu {
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem; }
+      .menu__logo {
+        height: 6rem; }
+      .menu .between {
+        flex-grow: 1; }
+      .menu .nav__items {
+        display: flex;
+        list-style: none; }
+        .menu .nav__items li {
+          font-size: 2rem; }
+          .menu .nav__items li:not(:last-child) {
+            margin-right: 4rem; }
+          .menu .nav__items li a {
+            text-decoration: none;
+            color: inherit; }
+          .menu .nav__items li:hover {
+            color: #ab8d6b; } }
 
 .footer {
-  padding: 10rem 20rem;
-  background-color: #fff; }
+  padding: 6rem 3rem;
+  background-color: #fff;
+  text-align: center; }
+  @media (min-width: 1200px) {
+    .footer {
+      padding: 10rem 20rem;
+      text-align: left; } }
   .footer .top {
     display: flex;
+    flex-direction: column;
     justify-content: space-between; }
+    @media (min-width: 1200px) {
+      .footer .top {
+        flex-direction: row; } }
   .footer__left {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    order: 1;
+    margin-top: 6rem; }
+    @media (min-width: 1200px) {
+      .footer__left {
+        order: 0;
+        margin-top: 0; } }
     .footer__left .logo {
       display: flex;
+      justify-content: center;
       align-items: center; }
       .footer__left .logo img {
         height: 4.5rem;
         margin-right: 1rem; }
     .footer__left .social-links {
       display: flex;
-      margin-top: 2.5rem;
-      margin-left: 0.5rem; }
+      justify-content: center;
+      margin-top: 6rem; }
+      @media (min-width: 1200px) {
+        .footer__left .social-links {
+          margin-top: 0;
+          margin-left: 0.5rem;
+          justify-content: flex-start; } }
       .footer__left .social-links i {
         color: black;
-        font-size: 2.5rem;
-        margin-right: 2rem; }
+        font-size: 3rem;
+        margin: 1.5rem; }
+        @media (min-width: 1200px) {
+          .footer__left .social-links i {
+            font-size: 2.5rem;
+            margin: 2rem 2rem 0 0; } }
   .footer__middle .menu {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    padding: 0; }
     .footer__middle .menu li {
       margin-bottom: 1rem; }
       .footer__middle .menu li a {
         color: black;
         text-decoration: none; }
-  .footer__right .contact {
-    list-style: none;
-    display: flex;
-    flex-direction: column; }
-    .footer__right .contact li {
-      margin-bottom: 3rem; }
+  .footer__right {
+    margin-top: 6rem; }
+    @media (min-width: 1200px) {
+      .footer__right {
+        margin-top: 0; } }
+    .footer__right .contact {
+      list-style: none;
+      display: flex;
+      flex-direction: column; }
+      @media (min-width: 1200px) {
+        .footer__right .contact li {
+          margin-bottom: 3rem;
+          margin-right: 2rem; } }
       .footer__right .contact li a {
         text-decoration: none;
         color: #ab8d6b; }
   .footer .black-line {
-    margin-top: 8rem; }
+    margin-top: 2rem; }
+    @media (min-width: 1200px) {
+      .footer .black-line {
+        margin-top: 8rem; } }
   .footer .copyright {
     margin-top: 1rem;
-    text-align: right;
+    text-align: center;
     color: #898989; }
+    @media (min-width: 1200px) {
+      .footer .copyright {
+        text-align: right; } }
 
 .header {
-  min-height: 70rem;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 0 10rem;
-  background-image: linear-gradient(0deg, rgba(27, 44, 61, 0.75), rgba(27, 44, 61, 0.75)), linear-gradient(89.99deg, rgba(27, 44, 61, 0.1305) 0.01%, rgba(27, 44, 61, 0.6003) 43.75%, rgba(27, 44, 61, 0.87) 99.99%), url("./../static/assets/bielsko_bg.jpg");
-  background-size: cover;
-  background-position: center;
-  color: #fff; }
-  @media (max-width: 1920px) {
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(#1b2c3d, #546575); }
+  @media (min-width: 892px) {
+    .header {
+      background-image: linear-gradient(0deg, rgba(27, 44, 61, 0.75), rgba(27, 44, 61, 0.75)), linear-gradient(89.99deg, rgba(27, 44, 61, 0.1305) 0.01%, rgba(27, 44, 61, 0.6003) 43.75%, rgba(27, 44, 61, 0.87) 99.99%), url("./../static/assets/bielsko_bg.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: left;
+      min-height: 70rem;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      padding: 0 10rem; } }
+  @media (min-width: 892px) and (max-width: 1920px) {
     .header {
       height: 100vh; } }
