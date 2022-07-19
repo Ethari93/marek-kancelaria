@@ -18,7 +18,7 @@
       .hero-image {
         background-image: url(./../static/assets/marek_nowicki_1.png);
         flex-grow: 1;
-        min-width: 40vw;
+        min-width: 50vw;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom right;
@@ -33,8 +33,13 @@
   flex-direction: column;
 
   .hero-image-mobile {
-    margin-top: 4rem;
-    width: 100%;
+    margin-top: 2rem;
+    max-width: 30rem;
+    margin: 0 auto;
+
+    @include respond-to("smedium") {
+      margin-top: 5rem;
+    }
   }
 
   @include respond-to("medium") {

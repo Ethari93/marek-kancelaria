@@ -8,13 +8,13 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 */
 .mobile-wip {
   display: none !important; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .mobile-wip {
       display: block; } }
 
 .hide-on-mobile {
   display: none; }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .hide-on-mobile {
       display: block; } }
 
@@ -59,7 +59,7 @@ html {
 h1 {
   font-size: 3.5rem;
   font-weight: 700; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     h1 {
       font-size: 5rem; } }
 
@@ -82,6 +82,9 @@ h2 {
 .footer .copyright {
   font-size: 1.2rem; }
 
+.modal {
+  font-size: 2.5rem; }
+
 /* Additonal Base Stylesheets */
 /*
 This file is used to contain all component imports.
@@ -95,7 +98,7 @@ Files inside this folder should contain all styles relating to a reusable compon
   border: none;
   color: #fff;
   cursor: pointer; }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .btn {
       padding: 1.3rem 1.8rem;
       font-size: 1.8rem; } }
@@ -106,6 +109,51 @@ Files inside this folder should contain all styles relating to a reusable compon
   .btn--alt:hover {
     background-color: #1b2c3d;
     color: #fff; }
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+  .modal__content {
+    background-image: linear-gradient(#1b2c3d, #546575);
+    margin: 5%;
+    height: 95%;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    position: relative; }
+    .modal__content .nav-items {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .modal__content a {
+      margin-top: 4rem;
+      display: block;
+      color: #fff;
+      text-decoration: none; }
+  .modal__close {
+    color: white;
+    position: absolute;
+    right: 4rem;
+    top: 2rem;
+    z-index: 2;
+    font-size: 4rem; }
 
 .menu-hover a,
 .menu-hover li {
@@ -131,13 +179,13 @@ Files inside this folder should contain all styles relating to a reusable compon
     transform: translateY(-12px) rotate(-135deg); }
   .mobile-cross:hover div {
     transform: scale(0); }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .mobile-cross {
       display: none; } }
 
 .hero {
   padding: 5rem 5rem 0 5rem; }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .hero {
       display: flex;
       align-items: stretch;
@@ -153,7 +201,7 @@ Files inside this folder should contain all styles relating to a reusable compon
         .hero__image-wrapper .hero-image {
           background-image: url(./../static/assets/marek_nowicki_1.png);
           flex-grow: 1;
-          min-width: 40vw;
+          min-width: 50vw;
           background-size: contain;
           background-repeat: no-repeat;
           background-position: bottom right; } }
@@ -163,9 +211,13 @@ Files inside this folder should contain all styles relating to a reusable compon
   display: flex;
   flex-direction: column; }
   .cta .hero-image-mobile {
-    margin-top: 4rem;
-    width: 100%; }
-  @media (min-width: 892px) {
+    margin-top: 2rem;
+    max-width: 30rem;
+    margin: 0 auto; }
+    @media (min-width: 900px) {
+      .cta .hero-image-mobile {
+        margin-top: 5rem; } }
+  @media (min-width: 1300px) {
     .cta {
       max-width: 50rem;
       display: block; }
@@ -173,7 +225,7 @@ Files inside this folder should contain all styles relating to a reusable compon
         display: none; } }
   .cta__subtitle {
     margin-top: 1rem; }
-    @media (min-width: 892px) {
+    @media (min-width: 1300px) {
       .cta__subtitle {
         margin-top: 0; } }
   .cta__list {
@@ -213,7 +265,7 @@ Files inside this folder should contain all styles relating to a reusable compon
   flex-direction: column;
   background-color: #f4f4f4;
   padding: 5rem 0; }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .three-col {
       flex-direction: row;
       padding: 8rem 5rem; } }
@@ -227,7 +279,7 @@ Files inside this folder should contain all styles relating to a reusable compon
       font-size: 5rem;
       color: #1b2c3d;
       margin-bottom: 2rem; }
-      @media (min-width: 892px) {
+      @media (min-width: 1300px) {
         .three-col__item .icon i {
           margin-bottom: 3rem; } }
     .three-col__item .subtitle {
@@ -253,7 +305,7 @@ Files inside this folder should contain all styles relating to a reusable compon
     text-align: center;
     font-size: 3rem;
     font-weight: 700; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .about-me {
       padding: 7rem 10rem 7rem 13rem; }
       .about-me__headline {
@@ -265,14 +317,14 @@ Files inside this folder should contain all styles relating to a reusable compon
     flex-direction: column;
     align-items: center;
     margin-top: 4rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .about-me__content {
         flex-direction: row;
         margin-top: 8rem; } }
     .about-me__content .copy {
       margin-top: 4rem;
       text-align: center; }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .about-me__content .copy {
           margin-left: 9rem; } }
       .about-me__content .copy p:not(:last-child) {
@@ -286,7 +338,7 @@ Files inside this folder should contain all styles relating to a reusable compon
         background-size: cover;
         position: relative;
         z-index: 1; }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .about-me__content .media .rectangle {
           background-color: #1b2c3d;
           width: 40rem;
@@ -306,14 +358,14 @@ Files inside this folder should contain all styles relating to a reusable compon
   justify-content: center;
   padding: 6rem 3rem;
   text-align: center; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .contact-me {
       padding: 10rem 0;
       flex-direction: row;
       text-align: left; } }
   .contact-me .contact-btn {
     margin-top: 3rem; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .contact-me__column {
       width: 35%;
       margin: 0 4rem; } }
@@ -329,7 +381,7 @@ Files inside this folder should contain all styles relating to a reusable compon
       position: absolute;
       left: 50%;
       transform: translateX(-50%); }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .contact-me__headline::after {
           left: 0;
           width: 4rem;
@@ -344,7 +396,7 @@ Files inside this folder should contain all styles relating to a reusable compon
       color: #1b2c3d; }
   .contact-me__form {
     margin-top: 6rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .contact-me__form {
         margin-top: 0; } }
     .contact-me__form .contact-form__btn {
@@ -386,12 +438,12 @@ Files inside this folder should contain all styles relating to a reusable compon
   background-color: #f4f4f4; }
   .blog__intro {
     padding: 6rem 3rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .blog__intro {
         padding: 10rem; } }
     .blog__intro .intro-text {
       margin: 0 auto; }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .blog__intro .intro-text {
           width: 60%; } }
     .blog__intro .blog-link {
@@ -402,7 +454,7 @@ Files inside this folder should contain all styles relating to a reusable compon
     background-position: center;
     color: #fff;
     padding: 6rem 3rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .blog__promo {
         padding: 20rem; } }
     .blog__promo .blog-logo {
@@ -444,7 +496,7 @@ Files inside this folder can contain specific element styles and layout.
     height: 5rem; }
   .menu .nav__items {
     display: none; }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .menu {
       justify-content: space-between;
       align-items: center;
@@ -470,7 +522,7 @@ Files inside this folder can contain specific element styles and layout.
   padding: 6rem 3rem;
   background-color: #fff;
   text-align: center; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .footer {
       padding: 10rem 20rem;
       text-align: left; } }
@@ -478,7 +530,7 @@ Files inside this folder can contain specific element styles and layout.
     display: flex;
     flex-direction: column;
     justify-content: space-between; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .footer .top {
         flex-direction: row; } }
   .footer__left {
@@ -486,7 +538,7 @@ Files inside this folder can contain specific element styles and layout.
     flex-direction: column;
     order: 1;
     margin-top: 6rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .footer__left {
         order: 0;
         margin-top: 0; } }
@@ -501,7 +553,7 @@ Files inside this folder can contain specific element styles and layout.
       display: flex;
       justify-content: center;
       margin-top: 6rem; }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .footer__left .social-links {
           margin-top: 0;
           margin-left: 0.5rem;
@@ -510,7 +562,7 @@ Files inside this folder can contain specific element styles and layout.
         color: black;
         font-size: 3rem;
         margin: 1.5rem; }
-        @media (min-width: 1200px) {
+        @media (min-width: 1400px) {
           .footer__left .social-links i {
             font-size: 2.5rem;
             margin: 2rem 2rem 0 0; } }
@@ -527,14 +579,14 @@ Files inside this folder can contain specific element styles and layout.
         text-decoration: none; }
   .footer__right {
     margin-top: 6rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .footer__right {
         margin-top: 0; } }
     .footer__right .contact {
       list-style: none;
       display: flex;
       flex-direction: column; }
-      @media (min-width: 1200px) {
+      @media (min-width: 1400px) {
         .footer__right .contact li {
           margin-bottom: 3rem;
           margin-right: 2rem; } }
@@ -543,14 +595,14 @@ Files inside this folder can contain specific element styles and layout.
         color: #ab8d6b; }
   .footer .black-line {
     margin-top: 2rem; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .footer .black-line {
         margin-top: 8rem; } }
   .footer .copyright {
     margin-top: 1rem;
     text-align: center;
     color: #898989; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .footer .copyright {
         text-align: right; } }
 
@@ -558,7 +610,7 @@ Files inside this folder can contain specific element styles and layout.
   text-align: center;
   color: #fff;
   background-image: linear-gradient(#1b2c3d, #546575); }
-  @media (min-width: 892px) {
+  @media (min-width: 1300px) {
     .header {
       background-image: linear-gradient(0deg, rgba(27, 44, 61, 0.75), rgba(27, 44, 61, 0.75)), linear-gradient(89.99deg, rgba(27, 44, 61, 0.1305) 0.01%, rgba(27, 44, 61, 0.6003) 43.75%, rgba(27, 44, 61, 0.87) 99.99%), url("./../static/assets/bielsko_bg.jpg");
       background-size: cover;
@@ -569,6 +621,6 @@ Files inside this folder can contain specific element styles and layout.
       flex-direction: column;
       align-content: center;
       padding: 0 10rem; } }
-  @media (min-width: 892px) and (max-width: 1920px) {
+  @media (min-width: 1300px) and (max-width: 1920px) {
     .header {
       height: 100vh; } }
