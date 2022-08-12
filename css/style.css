@@ -205,6 +205,9 @@ Files inside this folder should contain all styles relating to a reusable compon
           background-size: contain;
           background-repeat: no-repeat;
           background-position: bottom right; } }
+      @media (min-width: 1300px) and (min-width: 1800px) {
+        .hero__image-wrapper .hero-image {
+          min-width: 30vw; } }
 
 .cta {
   align-self: center;
@@ -263,8 +266,10 @@ Files inside this folder should contain all styles relating to a reusable compon
 .three-col {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #f4f4f4;
-  padding: 5rem 0; }
+  padding: 5rem 0;
+  color: #fff; }
   @media (min-width: 1300px) {
     .three-col {
       flex-direction: row;
@@ -273,11 +278,18 @@ Files inside this folder should contain all styles relating to a reusable compon
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.6rem;
-    padding: 2rem; }
+    font-size: 1.3rem;
+    padding: 3rem;
+    margin: 2rem;
+    background: #1b2c3d;
+    flex: 1;
+    max-width: 51rem; }
+    @media (min-width: 767px) {
+      .three-col__item {
+        width: 100%; } }
     .three-col__item .icon i {
       font-size: 5rem;
-      color: #1b2c3d;
+      color: #ab8d6b;
       margin-bottom: 2rem; }
       @media (min-width: 1300px) {
         .three-col__item .icon i {
@@ -288,15 +300,22 @@ Files inside this folder should contain all styles relating to a reusable compon
     .three-col__item .description {
       text-align: center;
       margin-top: 1rem;
-      font-size: 1.5rem; }
+      font-size: 1.3rem; }
     .three-col__item .examples {
       margin-top: 1rem;
       text-align: center;
       list-style: none;
-      font-size: 1.5rem; }
-      .three-col__item .examples li::before, .three-col__item .examples li::after {
-        content: "-";
-        margin: 0 2rem; }
+      font-size: 1.3rem; }
+      .three-col__item .examples li {
+        /*  &::before,
+        &::after {
+          content: "-";
+          margin: 0 2rem;
+        } */
+        margin-top: 1rem; }
+        .three-col__item .examples li span {
+          border-bottom: 2px solid #ab8d6b;
+          padding-bottom: 0.3rem; }
 
 .about-me {
   background-color: #fff;
@@ -324,11 +343,27 @@ Files inside this folder should contain all styles relating to a reusable compon
     .about-me__content .copy {
       margin-top: 4rem;
       text-align: center; }
+      .about-me__content .copy-tick {
+        height: 3rem;
+        margin-top: 1rem; }
       @media (min-width: 1400px) {
         .about-me__content .copy {
-          margin-left: 9rem; } }
-      .about-me__content .copy p:not(:last-child) {
-        margin-bottom: 2rem; }
+          margin-left: 20rem; } }
+      .about-me__content .copy p {
+        position: relative; }
+        .about-me__content .copy p:not(:last-child) {
+          margin-bottom: 2rem; }
+        .about-me__content .copy p::before {
+          display: none;
+          position: absolute;
+          left: -4rem;
+          top: -0.2rem;
+          content: " ";
+          background-image: url("./../static/assets/svg/check.svg");
+          background-size: 3rem 3rem;
+          height: 3rem;
+          width: 3rem;
+          margin: 0 auto; }
     .about-me__content .media {
       position: relative; }
       .about-me__content .media .photo {

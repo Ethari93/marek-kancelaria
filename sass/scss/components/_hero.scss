@@ -22,6 +22,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom right;
+
+        @include respond-to("larger") {
+          min-width: 30vw;
+        }
       }
     }
   }

@@ -34,13 +34,34 @@
       margin-top: 4rem;
       text-align: center;
 
+      &-tick {
+        height: 3rem;
+        margin-top: 1rem;
+      }
+
+      // Marek to radca prawny
       @include respond-to("large") {
-        margin-left: 9rem;
+        margin-left: 20rem;
       }
 
       p {
+        position: relative;
+
         &:not(:last-child) {
           margin-bottom: 2rem;
+        }
+
+        &::before {
+          display: none;
+          position: absolute;
+          left: -4rem;
+          top: -0.2rem;
+          content: " ";
+          background-image: url("./../static/assets/svg/check.svg");
+          background-size: 3rem 3rem;
+          height: 3rem;
+          width: 3rem;
+          margin: 0 auto;
         }
       }
     }
