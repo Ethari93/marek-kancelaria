@@ -342,7 +342,7 @@ Files inside this folder should contain all styles relating to a reusable compon
         margin-top: 8rem; } }
     .about-me__content .copy {
       margin-top: 4rem;
-      text-align: center; }
+      text-align: justify; }
       .about-me__content .copy-tick {
         height: 3rem;
         margin-top: 1rem; }
@@ -494,6 +494,8 @@ Files inside this folder should contain all styles relating to a reusable compon
         padding: 20rem; } }
     .blog__promo .blog-logo {
       height: 7rem; }
+    .blog__promo .blog-link {
+      color: #fff; }
     .blog__promo .blog-headline {
       font-size: 3.2rem;
       font-weight: 700;
